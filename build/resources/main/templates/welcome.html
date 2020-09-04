@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--This game is created by HY. Kelvin Lee (301326691) hyl30@sfu.ca-->
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+    <h1 id="rainbow-header"><img th:src="@{/images/Welcome2.gif}" /> to The Hangman Game!</h1>
+    <p>This game is created by HY. Kelvin Lee (301326691) hyl30@sfu.ca  <img id="dancing-baby" th:src="@{/images/dancing-baby.gif}" /></p>
+    <p><h4>Rules of Hangman:</h4></p>
+    <ol>
+        <li>You are going to guess a word, which is presented by a row of dashes and each dash represents each letter of the word.</li>
+        <li>You will guess letters which occur in the word.</li>
+        <li>If the letter does occur in the word, it will present the position(s) of the letter occuring in the word.</li>
+        <li>If the letter does not occur in the word, it increments the number of incorrect guesses.</li>
+        <li>You have a maximum of 7 incorrect guesses.</li>
+    </ol>
+    <form th:action="@{/game}" method="post">
+        <input class="submit-button" type="submit" value="Start a new game!" />
+    </form>
+</body>
+</html>

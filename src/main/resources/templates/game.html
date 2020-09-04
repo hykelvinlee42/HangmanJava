@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" style="width: 55%;">
+<head>
+    <!--This game is created by HY. Kelvin Lee hyl30@sfu.ca-->
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body style="margin-top: 0px;">
+    <div class="grid-container">
+        <div>
+            <h1>Game <th block th:text="${game.id}">Game id</th> Page</h1>
+            <p>Status: <th block th:text="${game.status}">Game status</th></p>
+            <!--Debug Starts-->
+            <!--<p>Actual word: <th block th:text="${game.word}">Game word</th></p>-->
+            <!--Debug Ends-->
+            <p>Progress: <th block th:text="${game.progress}">Game progress</th> (Word length:<th block th:text="${game.wordLength}">Game word length</th> )</p>
+            <p>You have made <th block th:text="${game.numTotalGuesses}">Game numTotalGuesses</th> guess(es), out of which <th block th:text="${game.numIncorrectGuesses}">Game numIncorrectGuesses</th> are incorrect.</p>
+            <form th:action="@{/game}" method="post">
+                Your guess:
+                <input type="text" th:name="guess" maxlength="1" />
+                <input class="submit-button" type="submit" value="Make a guess" />
+            </form>
+            <p><a th:href="@{/welcome}">Back to welcome page</a></p>
+        </div>
+        <div th:switch="${game.numIncorrectGuesses}">
+            <img class="hangman" th:case="0" th:src="@{/images/hangman/Hangman-0.png}" />
+            <img class="hangman" th:case="1" th:src="@{/images/hangman/Hangman-1.png}" />
+            <img class="hangman" th:case="2" th:src="@{/images/hangman/Hangman-2.png}" />
+            <img class="hangman" th:case="3" th:src="@{/images/hangman/Hangman-3.png}" />
+            <img class="hangman" th:case="4" th:src="@{/images/hangman/Hangman-4.png}" />
+            <img class="hangman" th:case="5" th:src="@{/images/hangman/Hangman-5.png}" />
+            <img class="hangman" th:case="6" th:src="@{/images/hangman/Hangman-6.png}" />
+        </div>
+    </div>
+</body>
+</html>

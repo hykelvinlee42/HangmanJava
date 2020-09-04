@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--This game is created by HY. Kelvin Lee hyl30@sfu.ca-->
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+    <h1>Game <th block th:text="${game.id}">Game id</th> is over</h1>
+    <div th:switch="${game.status}">
+        <p>
+            Status: <th block th:text="${game.status}">Game status</th>
+            <img class="status-img" th:case="${T(ca.cmpt213.a4.onlinehangman.model.Game.GameStatus).WON}" th:src="@{/images/fireworks.gif}" />
+            <img class="status-img" th:case="${T(ca.cmpt213.a4.onlinehangman.model.Game.GameStatus).LOST}" th:src="@{/images/Earth.gif}" />
+        </p>
+    </div>
+    <p>Progress made: <th block th:text="${game.progress}">Game progress</th></p>
+    <p>Actual word: <th block th:text="${game.word}">Game word</th></p>
+    <p>You have made <th block th:text="${game.numTotalGuesses}">Game numTotalGuesses</th> guess(es), out of which <th block th:text="${game.numIncorrectGuesses}">Game numIncorrectGuesses</th> are incorrect.</p>
+    <p><a th:href="@{/welcome}">Back to welcome page</a></p>
+    <img id="fourOfour" th:src="@{/images/gameover.gif}" />
+</body>
+</html>

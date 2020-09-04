@@ -1,0 +1,55 @@
+/*This game is created by HY. Kelvin Lee hyl30@sfu.ca*/
+html {
+    background-color: #ffff99;
+    /*font-family: Monaco, MonoSpace;*/
+    /*font-family: Lato;*/
+    /*font-family: "Lucida Sans Unicode";*/
+    font-family: Tahoma;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: "Lucida Grande";
+    font-size: 50px;
+    background-image: linear-gradient(to left, violet, blue, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grid-container {
+    border-width: 0px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1px;
+}
+
+.grid-container > div {
+    padding: 0px 0;
+}
+
+.hangman {
+    width: auto;
+    height: 512px;
+}
+
+#dancing-baby {
+    width: 50px;
+    height: auto;
+}
+
+#fourOfour {
+    width: 960px;
+    height: auto;
+}
+
+.status-img {
+    width: 25px;
+    height: 25px;
+}
+
+.submit-button {
+    background: #adadad;
+    border-color: #cbcbcb #4e474e #4e474e #cbcbcb;
+    border-style: solid;
+    border-width: 2px;
+}
